@@ -54,3 +54,14 @@ export function updateBar (id, values) {
       body: JSON.stringify(values),
     }).catch((error) => console.error(error))
 }
+
+export function loginUser(values) {
+  return fetch(url + 'utilisateur/login',{
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(values),
+  }).catch((error) => console.error(error))
+}
