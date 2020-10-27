@@ -6,6 +6,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import SignUp from '../Components/SignUp'
 import Login from '../Components/Login'
 import ListBar from '../Components/ListBar'
+import BarItem from '../Components/BarItem'
 import Evenements from '../Components/Evenements'
 import DetailBar from '../Components/DetailBar'
 import Comments from '../Components/Comments'

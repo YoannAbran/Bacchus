@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, FlatList, Text, View, ScrollView, Image, ImageBackground, ActivityIndicator ,TouchableOpacity} from 'react-native'
+import { StyleSheet, FlatList, Text, View, ScrollView, Image, ImageBackground, ActivityIndicator } from 'react-native'
 import BarItem from './BarItem'
 import { getBar } from '../Api/barApi'
 import { getCommentsBar } from '../Api/barApi'
@@ -12,7 +12,7 @@ class ListBar extends React.Component {
         this.state = {
             bars: [],
             titre: "Never's Bar",
-            isLoading: true,
+            isLoading: true
         }
     }
 
@@ -37,19 +37,16 @@ class ListBar extends React.Component {
         }
     }
 
-    _displayDetailBar(id) {
-
-    //     const navigation = this.props.navigation;
-    //       console.log("Display bar " + navigation)
-    //
-    //   return  navigation.navigate('TabDetail', {
-    //       screen: 'Detail'  ,
-    //       params : {id: id}, })
+    _displayDetailBar = (id) => {
+        console.log("Display bar " + id)
+        this.props.navigation.navigate('TabDetail', {
+          screen: 'Detail',
+          params : { id: id},
+        })
     }
 
     render() {
 
-      const {navigation} = this.props
 
             return (
                 <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
@@ -60,30 +57,14 @@ class ListBar extends React.Component {
                             source={require('../Images/bar-sf.png')}
                             />
                         </View>
-
                     { this._displayLoading()}
-
                     <View style={styles.card}>
                         <ScrollView>
 
                             <FlatList
                                 data={this.state.bars}
                                 keyExtractor={(item) => item.id.toString()}
-                                renderItem={({ item }) => {
-                                  return (
-
-                                  <TouchableOpacity
-                                       style={styles.main_container}
-                                       onPress={ () => {
-                                         navigation.navigate('TabDetail', {
-                                           screen: 'Detail',
-                                           params : { id: item.id},
-                                         });
-                                        }
-                                      }>
-                                    <BarItem bar={item}/>
-                                  </TouchableOpacity>
-                              )}}
+                                renderItem={({ item }) => <BarItem bar={item} displayDetailBar={this._displayDetailBar} />}
                             />
                         </ScrollView>
                     </View>
