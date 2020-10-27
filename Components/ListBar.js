@@ -42,9 +42,9 @@ class ListBar extends React.Component {
         this.props.navigation.push('BarDetails', { idBar: idBar })
     }
 
-    render() {    
+    render() {
 
-        
+
             return (
                 <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
                         <View style={styles.title_container}>
@@ -57,31 +57,31 @@ class ListBar extends React.Component {
                     { this._displayLoading()}
                     <View style={styles.card}>
                         <ScrollView>
-                            
+
                             <FlatList
                                 data={this.state.bars}
                                 keyExtractor={(item) => item.id.toString()}
                                 renderItem={({ item }) => <BarItem bar={item} displayDetailBar={this._displayDetailBar} />}
                             />
                         </ScrollView>
-                    </View>   
+                    </View>
                 </ImageBackground>
-                
+
             )
-        
-        
+
+
     }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20 
+        marginTop: 20
     },
     card: {
         backgroundColor: 'white',
         opacity: 0.8
-        
+
     },
     title_container: {
         height: 100,
@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: '#0000FF',
         backgroundColor: '#FFE436'
-        
+
     },
     title: {
         fontSize: 32,
         alignItems: 'center',
         textAlignVertical: "center",
         color: '#0000FF'
-        
+
     },
     logo: {
         width: 100,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1
-        
+
     }
 });
 
