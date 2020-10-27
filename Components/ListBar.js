@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, FlatList, Text, View, ScrollView, Image, ImageBackground, ActivityIndicator } from 'react-native'
+import { StyleSheet, FlatList, Text, View, ScrollView, Image, ImageBackground, ActivityIndicator ,TouchableOpacity} from 'react-native'
 import BarItem from './BarItem'
 import { getBar } from '../Api/barApi'
 import { getCommentsBar } from '../Api/barApi'
@@ -12,7 +12,7 @@ class ListBar extends React.Component {
         this.state = {
             bars: [],
             titre: "Never's Bar",
-            isLoading: true
+            isLoading: true,
         }
     }
 
@@ -37,14 +37,20 @@ class ListBar extends React.Component {
         }
     }
 
-    _displayDetailBar = (idBar) => {
-        console.log("Display bar " + idBar)
-        this.props.navigation.push('BarDetails', { idBar: idBar })
+    _displayDetailBar(id) {
+
+    //     const navigation = this.props.navigation;
+    //       console.log("Display bar " + navigation)
+    //
+    //   return  navigation.navigate('TabDetail', {
+    //       screen: 'Detail'  ,
+    //       params : {id: id}, })
     }
 
-    render() {    
+    render() {
 
-        
+      const {navigation} = this.props
+
             return (
                 <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
                         <View style={styles.title_container}>
@@ -54,34 +60,50 @@ class ListBar extends React.Component {
                             source={require('../Images/bar-sf.png')}
                             />
                         </View>
+
                     { this._displayLoading()}
+
                     <View style={styles.card}>
                         <ScrollView>
-                            
+
                             <FlatList
                                 data={this.state.bars}
                                 keyExtractor={(item) => item.id.toString()}
-                                renderItem={({ item }) => <BarItem bar={item} displayDetailBar={this._displayDetailBar} />}
+                                renderItem={({ item }) => {
+                                  return (
+
+                                  <TouchableOpacity
+                                       style={styles.main_container}
+                                       onPress={ () => {
+                                         navigation.navigate('TabDetail', {
+                                           screen: 'Detail',
+                                           params : { id: item.id},
+                                         });
+                                        }
+                                      }>
+                                    <BarItem bar={item}/>
+                                  </TouchableOpacity>
+                              )}}
                             />
                         </ScrollView>
-                    </View>   
+                    </View>
                 </ImageBackground>
-                
+
             )
-        
-        
+
+
     }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20 
+        marginTop: 20
     },
     card: {
         backgroundColor: 'white',
         opacity: 0.8
-        
+
     },
     title_container: {
         height: 100,
@@ -92,14 +114,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: '#0000FF',
         backgroundColor: '#FFE436'
-        
+
     },
     title: {
         fontSize: 32,
         alignItems: 'center',
         textAlignVertical: "center",
         color: '#0000FF'
-        
+
     },
     logo: {
         width: 100,
@@ -116,7 +138,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1
-        
+
     }
 });
 

@@ -7,24 +7,19 @@ class BarItem extends React.Component {
 
 
     render() {
-        
-        const { bar, displayDetailBar, nbfav } = this.props
-        // console.log(bar.id)
+
+        const { bar,  nbfav } = this.props
+
         return (
-            // <FadeIn>
-                <TouchableOpacity
-                     style={styles.main_container}
-                     onPress={() => displayDetailBar(bar.id)}>
-                    
+          
                     <View style={styles.content_container}>
                         <View style={styles.header_container}>
                             <Text style={styles.title_text}>{bar.nom}</Text>
                             <Text style={styles.ad_text}>{bar.adresse}</Text>
                             <Text style={styles.ad_text}>{bar.telephone}</Text>
-                        </View>                   
+                        </View>
                     </View>
-                </TouchableOpacity>
-            //</FadeIn>
+
         )
     }
 }
@@ -42,7 +37,7 @@ const styles = StyleSheet.create({
     header_container: {
         flex: 6,
         padding:3
-        
+
     },
     title_text: {
         fontWeight: 'bold',
@@ -56,7 +51,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#0000FF'
     }
-    
+
 })
 
 export default BarItem
