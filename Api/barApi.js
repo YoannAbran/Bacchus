@@ -69,13 +69,28 @@ export function updateBar (id, values) {
 
 export function loginUser(values) {
   console.log(values);
-  return fetch(url + 'utilisateur/login',{
+  return fetch(url + '/utilisateur/login',{
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values),
-  }).then((response) => console.log(response)).then((response) => response.json())
+  })
+  .then((response) => response.json())
+  .catch((error) => console.error(error))
+}
+
+export function addUser(values) {
+  console.log(values);
+  return fetch(url + '/utilisateur',{
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(values),
+  })
+  .then((response) => response.json())
   .catch((error) => console.error(error))
 }
