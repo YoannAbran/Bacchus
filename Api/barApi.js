@@ -63,5 +63,6 @@ export function loginUser(values) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values),
-  }).catch((error) => console.error(error))
+  }).then((response) => response.json())
+  .catch((error) => console.error(error))
 }
