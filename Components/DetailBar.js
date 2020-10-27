@@ -164,9 +164,7 @@ const styles = StyleSheet.create({
    bottom: 0,
  },
  horaire:{
-   flex:1.2,
-
-   alignSelf: "flex-end",
+   flex:1.2, 
  },
  head :{
    flex:0.8,

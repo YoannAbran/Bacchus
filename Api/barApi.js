@@ -34,6 +34,18 @@ export function getCommentsBar (id) {
       }}).then((response) => response.json())
       .catch((error) => console.error(error))
 }
+export function addCommentsBar (id,values) {
+
+  return fetch(url + '/comments/' + id,{
+    method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values),
+    }).then((response) => response.json())
+      .catch((error) => console.error(error))
+}
 
 export function getUser (id) {
   return fetch(url + '/utilisateur/' + id,{
@@ -56,6 +68,7 @@ export function updateBar (id, values) {
 }
 
 export function loginUser(values) {
+  console.log(values);
   return fetch(url + 'utilisateur/login',{
     method: 'POST',
     headers: {
@@ -63,5 +76,6 @@ export function loginUser(values) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values),
-  }).catch((error) => console.error(error))
+  }).then((response) => console.log(response)).then((response) => response.json())
+  .catch((error) => console.error(error))
 }

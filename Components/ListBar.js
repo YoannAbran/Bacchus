@@ -38,7 +38,7 @@ class ListBar extends React.Component {
     }
 
     _displayDetailBar = (id) => {
-        console.log("Display bar " + id)
+      
         this.props.navigation.navigate('TabDetail', {
           screen: 'Detail',
           params : { id: id},

@@ -27,7 +27,17 @@ function LogNav(){
   return (
 
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} options={{title: 'Login'}}  />
+      <Stack.Screen name="Login" component={Login} options={{
+          title: 'Login',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#0000FF',
+          },
+          headerTintColor: '#FFE436',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}   />
     </Stack.Navigator>
   );
 }
@@ -35,7 +45,17 @@ function SignNav(){
   return (
 
     <Stack.Navigator>
-      <Stack.Screen name="SignUp" component={SignUp} options={{title: 'SignUp'}} />
+      <Stack.Screen name="SignUp" component={SignUp} options={{
+          title: 'Inscription',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#0000FF',
+          },
+          headerTintColor: '#FFE436',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}  />
     </Stack.Navigator>
   );
 }
@@ -45,8 +65,20 @@ function BarNav() {
   return (
 
     <Stack.Navigator>
-      <Stack.Screen name="ListBar" component={ListBar} options={{title: 'Bars'}} />
-      <Stack.Screen name="TabDetail" component={EventBarNav} options={{title: 'Detail'}}  />
+      <Stack.Screen name="ListBar" component={ListBar} options={{
+    headerShown: false
+  }}  />
+      <Stack.Screen name="TabDetail" component={EventBarNav} options={{
+        title: 'Detail',
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: '#0000FF',
+        },
+        headerTintColor: '#FFE436',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }} />
     </Stack.Navigator>
   );
 }
@@ -74,8 +106,10 @@ function EventBarNav(props){
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: '#FFE436',
+            inactiveTintColor: '#0000FF',
+            activeBackgroundColor: '#0000FF',
+            inactiveBackgroundColor: '#FFE436',
             labelStyle:{fontSize:14},
           }}
             >
@@ -92,7 +126,18 @@ function RightBar() {
 
   return (
 
-      <Drawer.Navigator >
+    <Drawer.Navigator
+      drawerStyle={{
+          backgroundColor: '#0000FF',
+          width: 240,
+        }}
+        drawerContentOptions={{
+          activeTintColor: '#0000FF',
+          activeBackgroundColor:'#FFE436',
+          inactiveBackgroundColor:'#0000FF',
+          inactiveTintColor:'#FFE436',
+        }}
+     >
         <Drawer.Screen name="List" component={BarNav} options={{title: 'List'}} />
         <Drawer.Screen name="SignUp" component={SignNav} options={{title: 'SignUp'}} />
         <Drawer.Screen name="Login" component={LogNav} options={{title: 'Login'}} />
