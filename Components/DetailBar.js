@@ -19,14 +19,14 @@ import {
  class DetailBar extends React.Component {
 
   constructor(props){
-    super(props);{
+    super(props)
 
       this.state = {
         bars: [],
         isLoading: false,
         markers: []
       }
-    }
+    
   };
 
   _getBarDetail(){
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
    bottom: 0,
  },
  horaire:{
-   flex:1.2, 
+   flex:1.2,
  },
  head :{
    flex:0.8,

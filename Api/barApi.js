@@ -8,6 +8,7 @@ export function getBar () {
       }}).then((response) => response.json())
       .catch((error) => console.error(error))
 }
+
 export function getUsers () {
   return fetch(url + "/utilisateur",{
       headers: {
@@ -34,9 +35,10 @@ export function getCommentsBar (id) {
       }}).then((response) => response.json())
       .catch((error) => console.error(error))
 }
-export function addCommentsBar (id,values) {
 
-  return fetch(url + '/comments/' + id,{
+export function addCommentsBar (values) {
+console.log(values);
+  return fetch(url + '/comments' ,{
     method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -93,4 +95,25 @@ export function addUser(values) {
   })
   .then((response) => response.json())
   .catch((error) => console.error(error))
+}
+export function getEventsBar (id) {
+  return fetch(url + '/events/' + id,{
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }}).then((response) => response.json())
+      .catch((error) => console.error(error))
+}
+
+export function addEventsBar (values) {
+console.log(values);
+  return fetch(url + '/events' ,{
+    method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values),
+    }).then((response) => response.json())
+      .catch((error) => console.error(error))
 }

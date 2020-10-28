@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getCommentsBar} from '../Api/barApi'
+import { getCommentsBar,addCommentsBar} from '../Api/barApi'
 import {
   SafeAreaView,
   StyleSheet,
@@ -19,14 +19,23 @@ import {
 class Comments extends React.Component {
 
  constructor(props){
-   super(props);{
+   super(props)
 
      this.state = {
+
+         values:{
+         login: '',
+         content : '',
+       },
        comments: [],
        isLoading: false,
+       // login_input :'',
+       content_input:'',
      }
-   }
+
  };
+
+
 
  _getComment(){
    const { route , navigation } = this.props;
@@ -37,16 +46,43 @@ class Comments extends React.Component {
 
 })
  }
+ addComment=()=>{
+   const { route , navigation } = this.props;
+   const { id } = route.params.params;
+
+   const {login_input, content_input} = this.state
+   const values = {
+             // login: login_input,
+             content: content_input,
+             id_bar : id,
+             token_user : "2de9140eae0787a70335d938c9b0db03d2eb0a3da18f66273018f3d9d1cdb24c"
+
+           }
+
+   addCommentsBar(values)
+              .then((responseData => {
+                console.log(
+                  "POST",
+                  "Response Body -> " + JSON.stringify(responseData)
+              )
+              }))
+
+              this._getComment()
+};
+
 
  componentDidMount() {
+
    this.setState({ isLoading: true });
    this._getComment();
 
  };
 
+
+
  render() {
 
-   const {isLoading, comments} = this.state
+   const {isLoading, comments,login_input,content_input} = this.state
 
    if (isLoading ){
      return <View style ={{flex :1,justifyContent: 'center',}}><ActivityIndicator size="large" color ="red"/></View>
@@ -70,15 +106,13 @@ class Comments extends React.Component {
      />
 </View>
 <View style ={styles.containerInput}>
-     <TextInput
-     placeholder= ' pseudo'
-     style={styles.input}
-     />
+
      <TextInput
      placeholder= ' message'
      style={styles.input}
+     onChangeText={text => this.setState({content_input: text})}
      />
-     <Button title='submit' onPress={""} />
+     <Button title='submit' onPress={this.addComment} />
      </View>
 
      </View>
