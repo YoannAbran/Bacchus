@@ -43,7 +43,7 @@ class Comments extends React.Component {
 
    getCommentsBar(id).then( data => {
      this.setState({comments: data, isLoading:false});
-
+    console.log(comments)
 })
  }
  addComment=()=>{
@@ -89,7 +89,7 @@ class Comments extends React.Component {
    }
 
    return (
-     <View style = {styles.containerMain}>
+    <View style = {styles.containerMain}>
      <View style = {styles.container}>
      <FlatList
         data={this.state.comments}
