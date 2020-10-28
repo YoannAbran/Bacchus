@@ -8,8 +8,9 @@ class BarItem extends React.Component {
 
     render() {
 
-        const { bar, displayDetailBar, nbfav } = this.props
-        // console.log(bar.id)
+        const { bar, displayDetailBar } = this.props
+
+        
         return (
             // <FadeIn>
                 <TouchableOpacity
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     main_container: {
         flex: 1,
         flexDirection: 'row',
-        borderBottomColor: "#FFE436",
+        borderBottomColor: "#fddd00",
         borderBottomWidth: 4
     },
     content_container: {
@@ -45,16 +46,18 @@ const styles = StyleSheet.create({
 
     },
     title_text: {
+        fontFamily: 'Kalam',
         fontWeight: 'bold',
         fontSize: 24,
         flexWrap: 'wrap',
         padding: 5,
-        color: '#0000FF'
+        color: '#1c2d51'
     },
     ad_text: {
+        fontFamily: 'Kalam',
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#0000FF'
+        color: '#1c2d51'
     }
 
 })

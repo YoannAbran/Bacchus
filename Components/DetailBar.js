@@ -11,6 +11,8 @@ import {
   FlatList,
   TextInput,
   Button,
+  Image,
+  Linking,
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native'
@@ -76,6 +78,23 @@ import {
     )
   }
 
+  _displayReseau() {
+    if ( this.state.bars.reseau_sociaux != undefined) {
+      const { bars } = this.state
+      console.log('reseau', bars.reseau_sociaux)
+      console.log('reseau', bars.reseau_sociaux.substr(11))
+      return (
+        <TouchableOpacity
+          onPress={() => Linking.openURL(bars.reseau_sociaux.substr(11))}>
+          <Image
+            style={styles.logo}
+            source={require('../Images/facebook.png')}
+          />
+        </TouchableOpacity>
+      )
+    } 
+  }
+
   componentDidMount() {
     this.setState({ isLoading: true });
     this._getBarDetail();
@@ -113,13 +132,14 @@ render() {
         <Text><Text style = {{textDecorationLine:"underline"}}>Adresse :</Text> {bars.adresse}</Text>
       </View>
 
-      <View style ={styles.horaire}>
-        <Text style = {{textDecorationLine:"underline"}}>Horaires : </Text>
-        <Text>{bars.horaire_jour}</Text>
-      </View>
-
-      <View style= {styles.text}>
-        <Text>{bars.reseau_sociaux}</Text>
+      <View style={styles.container_middle} >
+        <View style ={styles.horaire}>
+          <Text style = {{textDecorationLine:"underline"}}>Horaires : </Text>
+          <Text>{bars.horaire_jour}</Text>
+        </View>
+        <View style= {styles.reseau}>
+          { this._displayReseau() }
+        </View>
       </View>
 
       <View style= {styles.mapcontainer}>
@@ -148,10 +168,16 @@ const styles = StyleSheet.create({
     padding : 3,
     margin : 5,
   },
+  container_middle: {
+    flex:1.4,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    
+  },
   title :{
     fontSize: 30,
     textAlign: "center",
-
+    fontFamily: "Acme"
   },
   text:{
     fontSize:15,
@@ -163,9 +189,6 @@ const styles = StyleSheet.create({
    right: 0,
    bottom: 0,
  },
- horaire:{
-   flex:1.2, 
- },
  head :{
    flex:0.8,
  },
@@ -176,6 +199,16 @@ const styles = StyleSheet.create({
  mapcontainer :{
    flex:2,
  },
+  logo: {
+    width: 60,
+    height: 60,
+    marginRight: 5
+  },
+  reseau: {
+    flex: 1,
+    alignSelf: 'center',
+    alignItems: 'center'  
+  },
 });
 
 export default DetailBar

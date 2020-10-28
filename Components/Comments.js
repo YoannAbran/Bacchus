@@ -34,7 +34,7 @@ class Comments extends React.Component {
 
    getCommentsBar(id).then( data => {
      this.setState({comments: data, isLoading:false});
-
+    console.log(comments)
 })
  }
 
@@ -53,35 +53,35 @@ class Comments extends React.Component {
    }
 
    return (
-     <View style = {styles.containerMain}>
+    <View style = {styles.containerMain}>
      <View style = {styles.container}>
-     <FlatList
-        data={this.state.comments}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => {
-         return(
-           <View style = {styles.containerList}>
-             <Text style ={styles.pseudo}>{item.login}</Text>
-             <Text style ={styles.message}>{item.content}</Text>
-           </View>
-         )
-       }
-     }
-     />
-</View>
-<View style ={styles.containerInput}>
-     <TextInput
-     placeholder= ' pseudo'
-     style={styles.input}
-     />
-     <TextInput
-     placeholder= ' message'
-     style={styles.input}
-     />
-     <Button title='submit' onPress={""} />
-     </View>
+        <FlatList
+            data={this.state.comments}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item}) => {
+            return(
+              <View style = {styles.containerList}>
+                <Text style ={styles.pseudo}>{item.login}</Text>
+                <Text style ={styles.message}>{item.content}</Text>
+              </View>
+            )
+            }
+          }
+          />
+      </View>
+      <View style ={styles.containerInput}>
+        <TextInput
+        placeholder= ' pseudo'
+        style={styles.input}
+        />
+        <TextInput
+        placeholder= ' message'
+        style={styles.input}
+        />
+        <Button title='submit' onPress={""} />
+      </View>
 
-     </View>
+    </View>
    )
  }
 }
