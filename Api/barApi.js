@@ -82,7 +82,12 @@ export function loginUser(values) {
   .then((response) => response.json())
   .catch((error) => console.error(error))
 }
+<<<<<<< HEAD
 //
+=======
+
+// 
+>>>>>>> ca969973c36fc34db4dad31b076705d03f866467
 // export function signInUser(values) {
 //   })
 //   .then((response) => response.json())
@@ -91,6 +96,10 @@ export function loginUser(values) {
 
 export function addUser(values) {
   console.log(values);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca969973c36fc34db4dad31b076705d03f866467
   return fetch(url + '/utilisateur',{
     method: 'POST',
     headers: {
