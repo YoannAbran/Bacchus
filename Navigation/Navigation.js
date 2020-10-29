@@ -49,9 +49,9 @@ function SignNav(){
           title: 'Inscription',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#0000FF',
+            backgroundColor: '#2651D4',
           },
-          headerTintColor: '#FFE436',
+          headerTintColor: '#E2D537',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
@@ -72,9 +72,9 @@ function BarNav() {
         title: 'Detail',
         headerTitleAlign: 'center',
         headerStyle: {
-          backgroundColor: '#0000FF',
+          backgroundColor: '#2651D4',
         },
-        headerTintColor: '#FFE436',
+        headerTintColor: '#E2D537',
         headerTitleStyle: {
           fontWeight: 'bold',
         },
@@ -106,10 +106,10 @@ function EventBarNav(props){
             },
           })}
           tabBarOptions={{
-            activeTintColor: '#FFE436',
-            inactiveTintColor: '#0000FF',
-            activeBackgroundColor: '#0000FF',
-            inactiveBackgroundColor: '#FFE436',
+            activeTintColor: '#E2D537',
+            inactiveTintColor: '#2651D4',
+            activeBackgroundColor: '#2651D4',
+            inactiveBackgroundColor: '#E2D537',
             labelStyle:{fontSize:14},
           }}
             >
@@ -128,14 +128,14 @@ function RightBar() {
 
     <Drawer.Navigator
       drawerStyle={{
-          backgroundColor: '#0000FF',
+          backgroundColor: '#2651D4',
           width: 240,
         }}
         drawerContentOptions={{
-          activeTintColor: '#0000FF',
-          activeBackgroundColor:'#FFE436',
-          inactiveBackgroundColor:'#0000FF',
-          inactiveTintColor:'#FFE436',
+          activeTintColor: '#2651D4',
+          activeBackgroundColor:'#E2D537',
+          inactiveBackgroundColor:'#2651D4',
+          inactiveTintColor:'#E2D537',
         }}
      >
         <Drawer.Screen name="List" component={BarNav} options={{title: 'List'}} />

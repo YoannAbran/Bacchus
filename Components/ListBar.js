@@ -38,7 +38,7 @@ class ListBar extends React.Component {
     }
 
     _displayDetailBar = (id) => {
-      
+
         this.props.navigation.navigate('TabDetail', {
           screen: 'Detail',
           params : { id: id},
@@ -57,16 +57,15 @@ class ListBar extends React.Component {
                             source={require('../Images/bar-sf.png')}
                             />
                         </View>
-                    { this._displayLoading()}
+                    {this._displayLoading()}
                     <View style={styles.card}>
-                        <ScrollView>
-
+                        <View>
                             <FlatList
                                 data={this.state.bars}
                                 keyExtractor={(item) => item.id.toString()}
                                 renderItem={({ item }) => <BarItem bar={item} displayDetailBar={this._displayDetailBar} />}
                             />
-                        </ScrollView>
+                        </View>
                     </View>
                 </ImageBackground>
 
@@ -79,7 +78,6 @@ class ListBar extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20
     },
     card: {
         backgroundColor: 'white',
@@ -93,15 +91,15 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         borderWidth: 2,
         borderRadius: 8,
-        borderColor: '#0000FF',
-        backgroundColor: '#FFE436'
+        borderColor: '#2651D4',
+        backgroundColor: '#E2D537'
 
     },
     title: {
         fontSize: 32,
         alignItems: 'center',
         textAlignVertical: "center",
-        color: '#0000FF'
+        color: '#2651D4'
 
     },
     logo: {

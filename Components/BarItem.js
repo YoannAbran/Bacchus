@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     main_container: {
         flex: 1,
         flexDirection: 'row',
-        borderBottomColor: "#FFE436",
+        borderBottomColor: "#C70A0A",
         borderBottomWidth: 4
     },
     content_container: {
@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
         fontSize: 24,
         flexWrap: 'wrap',
         padding: 5,
-        color: '#0000FF'
+        color: '#2651D4'
     },
     ad_text: {
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#0000FF'
+        color: '#2651D4'
     }
 
 })
 
-export default BarItem 
+export default BarItem

@@ -48,7 +48,7 @@ class Comments extends React.Component {
 
    const {isLoading, comments} = this.state
 
-   if (isLoading ){
+   if (isLoading){
      return <View style ={{flex :1,justifyContent: 'center',}}><ActivityIndicator size="large" color ="red"/></View>
    }
 
