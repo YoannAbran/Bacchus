@@ -35,15 +35,10 @@ export function getCommentsBar (id) {
       }}).then((response) => response.json())
       .catch((error) => console.error(error))
 }
-<<<<<<< HEAD
-export function addCommentsBar (values) {
-  return fetch(url + '/comments',{
-=======
 
 export function addCommentsBar (values) {
 console.log(values);
   return fetch(url + '/comments' ,{
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
     method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -75,10 +70,7 @@ export function updateBar (id, values) {
 }
 
 export function loginUser(values) {
-<<<<<<< HEAD
-=======
   console.log(values);
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
   return fetch(url + '/utilisateur/login',{
     method: 'POST',
     headers: {
@@ -86,21 +78,19 @@ export function loginUser(values) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values),
-<<<<<<< HEAD
   }).then((response) => response.json())
   .catch((error) => console.error(error))
 }
-
-export function signInUser(values) {
-=======
-  })
-  .then((response) => response.json())
-  .catch((error) => console.error(error))
-}
+// 
+// export function signInUser(values) {
+//   })
+//   .then((response) => response.json())
+//   .catch((error) => console.error(error))
+// }
 
 export function addUser(values) {
   console.log(values);
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
+
   return fetch(url + '/utilisateur',{
     method: 'POST',
     headers: {
@@ -108,12 +98,8 @@ export function addUser(values) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values),
-<<<<<<< HEAD
-  }).then((response) => response.json())
-=======
   })
   .then((response) => response.json())
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
   .catch((error) => console.error(error))
 }
 export function getEventsBar (id) {

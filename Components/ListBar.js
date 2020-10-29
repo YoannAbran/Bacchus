@@ -13,7 +13,7 @@ let customFonts = {
 
 class ListBar extends React.Component {
 
-    
+
     constructor(props) {
         super(props)
         this.state = {
@@ -71,16 +71,10 @@ class ListBar extends React.Component {
                             source={require('../Images/bar-sf.png')}
                             />
                         </View>
-<<<<<<< HEAD
                     {this._displayLoading()}
                     <View style={styles.card}>
                         <View>
-=======
 
-                    { this._displayLoading()}
-                    <View style={styles.card}>
-                        <ScrollView>
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
                             <FlatList
                                 data={this.state.bars}
                                 keyExtractor={(item) => item.id.toString()}
@@ -112,25 +106,18 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         borderWidth: 2,
         borderRadius: 8,
-<<<<<<< HEAD
-        borderColor: '#2651D4',
-        backgroundColor: '#E2D537'
-=======
         borderColor: '#1c2d51',
         backgroundColor: '#fddd00'
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
+
 
     },
     title: {
         fontSize: 40,
-        fontFamily: 'Pacifico_400Regular',
+        fontFamily: 'Pacifico',
         alignItems: 'center',
         textAlignVertical: "center",
-<<<<<<< HEAD
-        color: '#2651D4'
-=======
         color: '#1c2d51'
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
+
 
     },
     logo: {
