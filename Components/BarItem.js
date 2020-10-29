@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+
 // import FadeIn from '../Animations/FadeIn'
 
 
@@ -10,7 +11,7 @@ class BarItem extends React.Component {
 
         const { bar, displayDetailBar } = this.props
 
-        
+
         return (
             // <FadeIn>
                 <TouchableOpacity
@@ -32,44 +33,32 @@ class BarItem extends React.Component {
 
 const styles = StyleSheet.create({
     main_container: {
-        flex: 1,
-        flexDirection: 'row',
-<<<<<<< HEAD
-        borderBottomColor: "#C70A0A",
-=======
-        borderBottomColor: "#fddd00",
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
-        borderBottomWidth: 4
+      flex: 1,
+      flexDirection: 'row',
+      borderBottomColor: "#C70A0A",
+      borderBottomWidth: 4
     },
     content_container: {
-        margin: 5
+      margin: 5
     },
     header_container: {
-        flex: 6,
-        padding:3
+      flex: 6,
+      padding:3
 
     },
     title_text: {
-        fontFamily: 'Kalam',
-        fontWeight: 'bold',
-        fontSize: 24,
-        flexWrap: 'wrap',
-        padding: 5,
-<<<<<<< HEAD
-        color: '#2651D4'
-=======
-        color: '#1c2d51'
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
+      fontFamily: 'Kalam',
+      fontWeight: 'bold',
+      fontSize: 24,
+      flexWrap: 'wrap',
+      padding: 5,
+      color: '#2651D4'
     },
     ad_text: {
-        fontFamily: 'Kalam',
-        fontSize: 14,
-        fontWeight: 'bold',
-<<<<<<< HEAD
-        color: '#2651D4'
-=======
-        color: '#1c2d51'
->>>>>>> a465fedf0aec0078b769c04ede4870efac129a3e
+      fontFamily: 'Kalam',
+      fontSize: 14,
+      fontWeight: 'bold',
+      color: '#2651D4'
     }
 
 })

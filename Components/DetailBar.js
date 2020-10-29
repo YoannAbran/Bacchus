@@ -1,6 +1,7 @@
 import React from 'react';
 import MapView, { Marker ,PROVIDER_GOOGLE } from "react-native-maps";
-import { getSingleBar} from '../Api/barApi'
+import { getSingleBar} from '../Api/barApi';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -190,7 +191,7 @@ const styles = StyleSheet.create({
    bottom: 0,
  },
  horaire:{
-   flex:1.2,
+   flex:2,
  },
  head :{
    flex:0.8,

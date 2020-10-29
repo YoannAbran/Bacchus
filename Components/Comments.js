@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { getCommentsBar,addCommentsBar} from '../Api/barApi'
 import {
   SafeAreaView,
