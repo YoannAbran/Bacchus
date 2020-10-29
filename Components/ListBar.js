@@ -13,8 +13,6 @@ let customFonts = {
 };
 
 class ListBar extends React.Component {
-
-
     constructor(props) {
         super(props)
         this.state = {
@@ -24,12 +22,10 @@ class ListBar extends React.Component {
             fontsLoaded: false
         }
     }
-
     async _loadFontsAsync() {
         await Font.loadAsync(customFonts);
         this.setState({ fontsLoaded: true });
     }
-
     componentDidMount() {
         this._loadFontsAsync();
         this.setState({ isLoading: true }) // Lancement du chargement
@@ -41,7 +37,6 @@ class ListBar extends React.Component {
         })
 
     }
-
     _displayLoading() {
         if (this.state.isLoading && !this.state.fontsLoaded) {
             return (
@@ -51,7 +46,6 @@ class ListBar extends React.Component {
             )
         }
     }
-
     _displayDetailBar = (id) => {
 
         this.props.navigation.navigate('TabDetail', {
@@ -59,10 +53,7 @@ class ListBar extends React.Component {
           params : { id: id},
         })
     }
-
     render() {
-
-
             return (
                 <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
                         <View style={styles.title_container}>
