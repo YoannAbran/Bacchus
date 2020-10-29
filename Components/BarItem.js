@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
         fontSize: 24,
         flexWrap: 'wrap',
         padding: 5,
-        color: '#1c2d51'
+        color: '#2651D4'
     },
     ad_text: {
         fontFamily: 'Kalam',
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#1c2d51'
+        color: '#2651D4'
 
     }
 
