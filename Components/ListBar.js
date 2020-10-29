@@ -61,14 +61,16 @@ class ListBar extends React.Component {
     }
 
     render() {
-        return (
-            <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
-                    <View style={styles.title_container}>
-                        <Text style={styles.title}>{this.state.titre}</Text>
-                        <Image
-                            style={styles.logo}
-                        source={require('../Images/bar-sf.png')}
-                        />
+
+
+            return (
+                <ImageBackground source={require('../Images/fond.jpg')} style={styles.container}>
+                        <View style={styles.title_container}>
+                            <Text style={styles.title}>{this.state.titre}</Text>
+                            <Image
+                                style={styles.logo}
+                            source={require('../Images/bar-sf.png')}
+                            />
                     </View>
                 {this._displayLoading()}
                 <View style={styles.card}>
@@ -81,7 +83,6 @@ class ListBar extends React.Component {
                     </View>
                 </View>
             </ImageBackground>
-
         )
     }
 }
